@@ -29,7 +29,7 @@ const newTaskElement = function(taskStr) {
         // elements tazpet add classes and type and innertext 
         
     checkBox.type = "checkbox";
-    editInput.type = "txt"
+    editInput.type = "text"
 
     editButton.innerText = "Edit"
     editButton.className = "edit"
@@ -97,35 +97,28 @@ const editTask = function () {
     console.log("Edit task...");
 
     const listItem = this.parentNode
-    const editInput = listItem.querySelector("input[type=text").value
-         console.log("editInput",editInput)
-         console.log("list iteem ", listItem);
+    const editInput = listItem.querySelector("input[type=text]")
+    const tasklabel = listItem.querySelector("label")
+        //  console.log("editInput",editInput)
+        //  console.log("list iteem ", listItem);
 
 
-    // const taskStr = inputBar.value
-    // const tasklabel = listItem.querySelector("label")
+ 
 
-    // const checkClass  = listItem.classList.contains("editMood")
+     const checkClass  = listItem.classList.contains("editMood")
     
     // console.log("listItem"+listItem);
     // console.log("editInput"+editInput);
-    // console.log("tasklabel"+tasklabel);
+    console.log("tasklabel"+tasklabel.innerText);
     // console.log("taskStr"+taskStr);
 
     
-    // if (checkClass) {
-    //     tasklabel.innerText = editInput.value
-
-    // }else{
-    //     editInput.innerText = taskStr
-
-
-    // }       
-
-    // listItem.classList.toggle("editMood")
-
-
-
+    if (checkClass) {
+        tasklabel.innerText = editInput.value
+    }else{
+        editInput.value = tasklabel.innerText
+    }       
+    listItem.classList.toggle("editMood")
 }
 
 
